@@ -16,7 +16,7 @@ const Heading = props => {
   return (
     <StyledHeading
       as={`h${level}`}
-      ref ={forwardRef}
+      ref={forwardRef}
       colorProp={color}
       level={+level}
       {...rest}
@@ -33,8 +33,6 @@ let HeadingDoc;
 if (process.env.NODE_ENV !== 'production') {
   HeadingDoc = require('./doc').doc(Heading); // eslint-disable-line global-require
 }
-const HeadingWrapper = compose(
-  withForwardRef,
-)(HeadingDoc || Heading);
+const HeadingWrapper = compose(withForwardRef)(HeadingDoc || Heading);
 
 export { HeadingWrapper as Heading };
